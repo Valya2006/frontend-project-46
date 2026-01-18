@@ -2,6 +2,8 @@
 
 import { Command } from "commander";
 import { readFileSync } from 'fs';
+import path from "path";
+import parsing from "../src/parsing.js";
 
 const packageJson = JSON.parse(readFileSync('./package.json'))
 const program = new Command();
@@ -12,6 +14,15 @@ program
   .version(packageJson.version)
   .option('-f --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>')
+  .action((filepath1, filepath2) => {
+    const absPath1 = path.resolve(process.cwd(), filepath1);
+    const absPath2 = path.resolve(process.cwd(), filepath2);
+
+    const objFile1 = parsing(absPath1);
+    const objFile2 = parsing(absPath2);
+
+  })
 
 
 program.parse(process.argv);
+
