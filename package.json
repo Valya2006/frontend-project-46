@@ -18,11 +18,11 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-		"gendiff": "node bin/gendiff.js",
-    "gendiff:help": "node bin/gendiff.js --help", 
+    "gendiff": "node bin/gendiff.js",
+    "gendiff:help": "node bin/gendiff.js --help",
     "gendiff:version": "node bin/gendiff.js --version"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
-    "eslint": "^9.38.0",
-    "globals": "^16.4.0"
+    "eslint": "^8.57.0",
+    "globals": "^16.4.0",
+    "jest": "^29.7.0"
   }
 }

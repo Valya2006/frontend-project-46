@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-undef */
 
 import { Command } from "commander";
 import { readFileSync } from 'fs';

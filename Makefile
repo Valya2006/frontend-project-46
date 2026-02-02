@@ -1,5 +1,11 @@
 install:
 	npm ci
 
+test:
+	npm test
+
 lint:
-	npm run lint
+	npx eslint .
+
+lint-fix:
+	npx eslint . --fix

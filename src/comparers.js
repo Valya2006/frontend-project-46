@@ -25,6 +25,9 @@ const buildDiff = (data1, data2) => {
 
 const genDiff = (filepath1, filepath2) => {
   const diff = buildDiff(filepath1, filepath2);
+  if (diff.length === 0) {
+    return '{\n}';
+  } 
   return `{\n${diff.join('\n')}\n}`;
 };
 
