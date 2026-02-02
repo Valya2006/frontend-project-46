@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /* eslint-disable no-undef */
 
-import { Command } from "commander";
+import { Command } from 'commander';
 import { readFileSync } from 'fs';
-import path from "path";
-import parsing from "../src/parsing.js";
-import genDiff from "../src/comparers.js";
+import path from 'path';
+import parsing from '../src/parsing.js';
+import genDiff from '../src/comparers.js';
 
-const packageJson = JSON.parse(readFileSync('./package.json'))
+const packageJson = JSON.parse(readFileSync('./package.json'));
 const program = new Command();
 
 program
@@ -23,10 +23,10 @@ program
     const objFile1 = parsing(absPath1);
     const objFile2 = parsing(absPath2);
 
-		const result = genDiff(objFile1, objFile2)
-		console.log(result)
+    const result = genDiff(objFile1, objFile2);
+    console.log(result);
 
-  })
+  });
 
 
 program.parse(process.argv);
